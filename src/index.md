@@ -1,6 +1,6 @@
-# Interactive-Data-Vis-Spring2026
+# Interactive-Data-Vis-Spring2026 - Lab Zero
 
-# Name
+#
 
 My name is Navdip Hans. This is interesting.
 
