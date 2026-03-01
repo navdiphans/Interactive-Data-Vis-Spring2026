@@ -1,10 +1,10 @@
 # Interactive-Data-Vis-Spring2026
 
-# My Name
+# Name
 
 My name is Navdip Hans. This is interesting.
 
-### A Smaller Header
+### This is my first lab 0.
 
 Visual City! Here I come?
 
