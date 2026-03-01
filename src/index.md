@@ -26,7 +26,6 @@ Visual City! Here I come?
 <ul>
   <li>Item one</li>
   <li>Item two</li>
-  <li>Item three</li>
-</ul>
+  </ul>
 
-<img src="observable.png" alt="Observable logo" width="200"/>
+<img src="catface.jpg" alt="Observable logo" width="200"/>
