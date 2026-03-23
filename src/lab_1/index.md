@@ -58,13 +58,6 @@ across all three species.
 
 
 ## Question 2: Ideal Weather Conditions for Pollinating
-<br>
-Cloudy conditions produce the highest average pollinator visit counts, followed closely 
-by Partly Cloudy and Sunny conditions. Visits increase steadily with temperature, peaking 
-at warmer temperatures above 27°C. Lower humidity levels around 60 to 70% are associated 
-with slightly more visits. Wind speed has the strongest negative effect, with visit counts 
-dropping sharply as wind increases above 3km/h.
-
 
 ```js
 Plot.plot({
@@ -130,6 +123,13 @@ Plot.plot({
 })
 
 ```
+<br>
+Cloudy conditions produce the highest average pollinator visit counts, followed closely 
+by Partly Cloudy and Sunny conditions. Visits increase steadily with temperature, peaking 
+at warmer temperatures above 27°C. Lower humidity levels around 60 to 70% are associated 
+with slightly more visits. Wind speed has the strongest negative effect, with visit counts 
+dropping sharply as wind increases above 3km/h.
+
 <br>
 <br>
 <br>
