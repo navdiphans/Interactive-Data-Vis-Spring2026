@@ -4,17 +4,6 @@ toc: true
 theme: stark
 ---
 
-</style>
-
-<style>
-  figure svg text {
-    font-size: 14px !important;
-  }
-  figure svg .tick text {
-    transform: translateY(8px) !important;
-  }
-</style>
-
 
 # Lab 1: Prolific Pollinators
 ```js
@@ -35,9 +24,14 @@ Plot.plot({
   x: {label: "Species", tickRotate: 0, labelOffset: 50}, 
   title: "Body Mass Distribution by Pollinator Species",
   color: {legend: true},
-  marginBottom: 80
+  marginBottom: 60
   })
 ```
+Carpenter Bees are the heaviest pollinator species observed, with body masses clustered 
+around 0.38 to 0.51g. Bumblebees fall in the middle range at approximately 0.22 to 0.30g. 
+Honeybees are the lightest species, with body masses tightly grouped around 0.08 to 0.11g.
+
+<br>
 
 ```js
 Plot.plot({
@@ -54,13 +48,22 @@ Plot.plot({
   marginBottom: 80
   })
 ```
-
+Carpenter Bees have the longest wing spans, ranging from approximately 33 to 49mm. 
+Bumblebees have a mid-range wing span of 26 to 41mm. Honeybees have the shortest wings, 
+tightly grouped between 16 and 22mm. Wing span closely mirrors the body mass pattern 
+across all three species.
+<br>
+<br>
+<br>
 
 
 ## Question 2: Ideal Weather Conditions for Pollinating
 <br>
-In this set of data, the ideal weather conditions for pollinating are during cloudy weather, 
-temps greater than 27 degrees celsius, with humidity less than 75% percent, and windspeed under 3km/h.
+Cloudy conditions produce the highest average pollinator visit counts, followed closely 
+by Partly Cloudy and Sunny conditions. Visits increase steadily with temperature, peaking 
+at warmer temperatures above 27°C. Lower humidity levels around 60 to 70% are associated 
+with slightly more visits. Wind speed has the strongest negative effect, with visit counts 
+dropping sharply as wind increases above 3km/h.
 
 
 ```js
@@ -76,6 +79,7 @@ Plot.plot({
   title: "Average Pollinator Visits by Weather Condition",
   color: {legend: true},
   style: {fontSize: 14, fontWeight: "bold"}
+ 
 })
 ```
 
@@ -126,6 +130,9 @@ Plot.plot({
 })
 
 ```
+<br>
+<br>
+<br>
 
 ## Question 3: Nectar Production by Flower Species
 
@@ -140,6 +147,9 @@ Plot.plot({
   x: {label: "Species", labelOffset: 50},
   title: "Average Nectar Production by Flower Species",
   color: {legend: true},
-  marginBottom: 80
+  marginBottom: 60
   })
 ```
+Sunflower produces the most nectar on average at approximately 0.95 μL per flower, 
+making it the most productive species in this dataset. Coneflower produces a moderate 
+amount at around 0.63 μL, while Lavender produces the least at approximately 0.54 μL.
