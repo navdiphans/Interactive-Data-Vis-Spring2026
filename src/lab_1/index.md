@@ -3,10 +3,9 @@ toc: true
 theme: coffee
 ---
 
-## title: "Lab 1: Passing Pollinators"
-
-
 # Lab 1: Prolific Pollinators
+
+<br>
 
 ```js
 const data = await FileAttachment("data/pollinator_activity_data.csv").csv({typed: true});
