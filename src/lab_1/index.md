@@ -1,5 +1,4 @@
 ---
-title: "Lab 1: Passing Pollinators"
 toc: true
 theme: coffee
 ---
