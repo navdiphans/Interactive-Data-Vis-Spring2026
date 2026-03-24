@@ -45,7 +45,7 @@ Plot.plot({
   x: {label: "Species", labelOffset: 50},
   title: "Wing Span Distribution by Pollinator Species",
   color: {legend: true},
-  marginBottom: 80
+  marginBottom: 60
   })
 ```
 
