@@ -4,8 +4,11 @@ toc: true
 theme: coffee
 ---
 
+## title: "Lab 1: Passing Pollinators"
+
 
 # Lab 1: Prolific Pollinators
+
 ```js
 const data = await FileAttachment("data/pollinator_activity_data.csv").csv({typed: true});
 ```
@@ -27,9 +30,8 @@ Plot.plot({
   marginBottom: 60
   })
 ```
-Carpenter Bees are the heaviest pollinator species observed, with body masses clustered 
-around 0.38 to 0.51g. Bumblebees fall in the middle range at approximately 0.22 to 0.30g. 
-Honeybees are the lightest species, with body masses tightly grouped around 0.08 to 0.11g.
+
+Carpenter Bees are the heaviest species, with body masses ranging from 0.301g to 0.518g. Bumblebees are mid-range with a range of 0.206g to 0.311g. Honeybees are the lightest with a range of 0.076g to 0.116g.
 
 <br>
 
@@ -48,14 +50,10 @@ Plot.plot({
   marginBottom: 80
   })
 ```
-Carpenter Bees have the longest wing spans, ranging from approximately 33 to 49mm. 
-Bumblebees have a mid-range wing span of 26 to 41mm. Honeybees have the shortest wings, 
-tightly grouped between 16 and 22mm. Wing span closely mirrors the body mass pattern 
-across all three species.
-<br>
-<br>
-<br>
 
+Carpenter Bees have the longest wings, ranging from 33.2mm to 49.1mm. Bumblebees range from 25.4mm to 41.6mm. Honeybees have the shortest wings, ranging from 15.7mm to 22.4mm.
+
+<br>
 
 ## Question 2: Ideal Weather Conditions for Pollinating
 
@@ -123,16 +121,10 @@ Plot.plot({
 })
 
 ```
-<br>
-Cloudy conditions produce the highest average pollinator visit counts, followed closely 
-by Partly Cloudy and Sunny conditions. Visits increase steadily with temperature, peaking 
-at warmer temperatures above 27°C. Lower humidity levels around 60 to 70% are associated 
-with slightly more visits. Wind speed has the strongest negative effect, with visit counts 
-dropping sharply as wind increases above 3km/h.
+Cloudy conditions produce the highest average pollinator visit counts, followed closely by Partly Cloudy and Sunny conditions. Visits increase steadily with temperature, increasing at temperatures above 27°C. Lower humidity levels around 60 to 70% percent are associated with slightly more visits. Wind speed has a significant negative effect, with visit counts dropping markedly as wind increases above 3km/h.
 
-<br>
-<br>
-<br>
+ <br> 
+
 
 ## Question 3: Nectar Production by Flower Species
 
@@ -150,6 +142,5 @@ Plot.plot({
   marginBottom: 60
   })
 ```
-Sunflower produces the most nectar on average at approximately 0.95 μL per flower, 
-making it the most productive species in this dataset. Coneflower produces a moderate 
-amount at around 0.63 μL, while Lavender produces the least at approximately 0.54 μL.
+
+Sunflower produces the most nectar on average at 0.94 μL per flower. Coneflower produces 0.64 μL on average. Lavender produces the least at 0.54 μL on average.
