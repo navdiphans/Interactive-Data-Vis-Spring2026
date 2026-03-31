@@ -149,7 +149,7 @@ This is helpful, but wouldn't it be nice if these dots corresponded to the price
 
 The [tip mark](https://observablehq.com/plot/marks/tip) draws a label or callout at a point. You typically pass one row (or a tiny array of rows) and map `x` / `y` like any other mark. Without a join, `y` might be a rough guess or a constant; with a join, `y` comes from the other table, which we discuss in the next section.
 
-```js
+```js echo
 Plot.plot({
   height: 200,
   width,
