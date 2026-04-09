@@ -1,6 +1,7 @@
 ---
 title: "Lab 2: Subway Staffing"
 toc: true
+theme: dark
 ---
 
 ```js
