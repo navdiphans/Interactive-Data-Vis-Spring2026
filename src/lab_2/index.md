@@ -1,7 +1,7 @@
 ---
 title: "Lab 2: Subway Staffing"
 toc: true
-theme: dark
+theme: coffee
 ---
 
 ```js
@@ -43,6 +43,7 @@ const currentStaffing = {
 Question 1. How did local events impact ridership in summer 2025? What effect did the July 15th fare increase have?
 <br>
 <br>
+
 
 
 ```js
@@ -100,12 +101,15 @@ const maxDate   = daily[daily.length - 1].date;
 
 
 
+
+
 ```js
 html`
     ${Plot.plot({
     width: 860,
-    height: 350,
+    height: 450,
     marginRight: 30,
+    marginBottom: 80,
     x: { type: "utc", label: "Date" },
     y: {
       label: "Total riders",
@@ -158,8 +162,9 @@ On July 15th, ridership fell to 564,000 and never came back to pre-increase leve
 
 The 7-day rolling average, clearing up daily noise, makes this noticeable. It held above 620,000 through the first half of July and fell very quickly after the fare increase.
 <br>
+<br>
 
----
+<hr style="border: none; border-top: 3px solid rgb(255, 255, 255);">
 
 
 
@@ -194,7 +199,8 @@ html`
     height: 768,
     marginLeft: 185,
     marginRight: 30,
-    style: { fontSize: "13px" },
+    marginBottom: 100,
+    style: { fontSize: "18px" },
     x: { type: "utc", label: "Event date", grid: true, domain: [new Date("2025-06-01"), new Date("2025-08-14")] },
     y: { label: "Station", grid: true },
     r: d => Math.pow(+d.lift_pct, 1.8) / 800,
@@ -249,9 +255,15 @@ html`
 ```
 *Bubble size represents ridership lift above station seasonal average. Larger bubbles indicate a greater percentage increase in ridership on the event day.*
 
-The July 15 fare increase lessened the effect somewhat, pulling the average event lift from 53% before the fare increase to 39% after, though events continued to drive noticeable increases through the end of the summer.
+The July 15 fare increase lessened the effect somewhat, pulling the average event lift from 53% before the fare increase to 39% afterward, though events continued to drive noticeable increases through the end of the summer.
 
----
+<br>
+
+<hr style="border: none; border-top: 3px solid rgb(255, 255, 255);">
+
+
+
+
 
 
 ```js
@@ -277,6 +289,7 @@ html`
     height: 660,
     marginLeft: 260,
     marginRight: 70,
+    style: { fontSize: "12px" },
     x: {
       label: "Ridership lift vs. station summer average (%)",
       tickFormat: d => "+" + d + "%"
@@ -299,7 +312,7 @@ html`
         text: d => `+${d.lift_pct.toFixed(0)}%`,
         textAnchor: "start",
         dx: 4,
-        fontSize: 11,
+        fontSize: 14,
         fill: "#1e40af"
       }),
       Plot.tip(top15, Plot.pointer({
@@ -324,10 +337,14 @@ The highest impact events were over 120% above a station's typical daily ridersh
 
 Lower volume stations saw larger percentage spikes than major hubs for comparable events. 
 
-
 <br>
 
----
+<hr style="border: none; border-top: 3px solid rgb(255, 255, 255);">
+
+
+
+
+Question 2. How do the stations compare when it comes to response time? Which are the best, which are the worst?
 
 
 ```js
@@ -354,8 +371,9 @@ html`
     height: 560,
     marginLeft: 185,
     marginRight: 60,
+    style: { fontSize: "12px" },
     x: {
-      label: "Mean response time (minutes)",
+      label: "Mean response time (min.)",
       grid: true
     },
     y: { label: null },
@@ -411,15 +429,23 @@ html`
 `
 ```
 
-Station response times vary, splitting into two tiers. 
+Station response times vary and split into two tiers. 
+The **gap is consistent across all severity levels**, pointing to structural differences rather than incident type.
 
-The fastest stations are Fulton St, Houston St, Times Sq-42 St, 34 St-Penn Station, and 86 St. They averaged around 5 minutes per incident, well below the mean of 10.2 minutes. 
+The fastest stations are **Fulton St, Houston St, Times Sq-42 St, 34 St-Penn Station, and 86 St.** They averaged around 5 minutes per incident, well below the mean of 10.2 minutes. 
 
-The slowest stations are 59 St-Columbus Circle, West 4 St-Wash Sq, Canal St, Bowling Green, and 125 St. They averaged between 18 and 19 minutes, nearly four times slower. 
+The slowest stations are **59 St-Columbus Circle, West 4 St-Wash Sq, Canal St, Bowling Green, and 125 St.** They averaged between 18 and 19 minutes, nearly four times slower. 
 
-The gap is consistent across all severity levels, pointing to structural differences rather than incident type.
+<br>
 
----
+<hr style="border: none; border-top: 3px solid rgb(255, 255, 255);">
+
+
+
+
+
+Question 3. Which three stations need the most staffing help for next summer based on the 2026 event calendar?
+
 
 ```js
 const currentStaffing = {
@@ -472,6 +498,13 @@ const riskNorm = riskData
 
 const top3 = new Set(riskNorm.slice(0, 3).map(d => d.station));
 ```
+
+
+
+
+
+
+
 ```js
 html`
   ${Plot.plot({
@@ -479,6 +512,7 @@ html`
     height: 520,
     marginLeft: 185,
     marginRight: 60,
+    style: { fontSize: "12px" },
     x: {
       label: "Composite risk score (normalized)",
       grid: true,
@@ -518,16 +552,20 @@ html`
   })}
 `
 ```
+*Hover over any bar for the full breakdown.*
 
-The risk score is (total expected attendance ÷ current staffing) × mean response time, normalized so the highest-scoring station reads as 100. Hover any bar for the full breakdown.
+The risk score is (total expected attendance ÷ current staffing) × mean response time, normalized so the highest-scoring station reads as 100. 
 
-Canal St leads by a wide margin: 8 events, 70,000 expected attendees, only 4 staff, and an 18.4 minute mean response time. 
+**Canal St** needs the most help with only 4 staff, 8 events, a 18.4 minute mean response time with 70,000 expected attendees.
 
-West 4 St-Wash Sq and 23 St follow, both carrying low staffing and slow response times against a meaningful 2026 event load. 
+**West 4 St-Wash Sq** ranks second. It has 4 staff, a mean response time of 18.7 minutes, and only 1 scheduled event with 8,238 expected attendees.
 
-These three stations represent the clearest mismatch between expected demand and current operational capacity.
+**23 St** ranks third. It has 8 staff, an above average response time of 11.2 minutes, and 3 events with nearly 25,000 expected attendees.
+
+
 
 ---
+
 
 
 
