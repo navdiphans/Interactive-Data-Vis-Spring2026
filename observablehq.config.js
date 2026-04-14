@@ -19,6 +19,7 @@ export default {
         { name: "Transforms and Data Manipulation", path: "/lessons/6_transforms_and_data_manipulation" },
         { name: "Data Types, Scales, Marks", path: "/lessons/7_data_types_scales_marks" },
         { name: "Data Joins and Annotations", path: "/lessons/8_data_joins_and_annotations" },
+        { name: "Faceting and SVGs", path: "/lessons/9_faceting_and_svgs" },
       ]
     },
     {
